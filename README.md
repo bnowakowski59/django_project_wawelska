@@ -1,1 +1,1 @@
-# django_project_wawelska
+# django_project_wawelsk
