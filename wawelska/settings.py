@@ -29,7 +29,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+# List of applications to be add to django project by using django-admin startapp appname in django terminal
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cars',
+
 ]
 
 MIDDLEWARE = [
