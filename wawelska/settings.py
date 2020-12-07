@@ -121,3 +121,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/' # nazwa URL widoczna w przegladarce
 # STATICFILES_DIRS = ['static'] # foldery w ktorych przechowujemy pliki static globalnie
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = 'media'
