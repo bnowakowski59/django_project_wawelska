@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cars',
+    'bootstrap',
+    'bootstrapform',
 
 ]
 
@@ -124,3 +126,7 @@ STATIC_URL = '/static/' # nazwa URL widoczna w przegladarce
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media'
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'showAllCars'
+LOGOUT_REDIRECT_URL = 'login'

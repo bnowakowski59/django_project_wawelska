@@ -1,0 +1,15 @@
+{% extends '__main.html' %}
+
+{% block title%}Accept{% endblock %}
+
+{% block page %}
+
+    <h1>Czy napewno chcesz usunac {{car.marka}} {{car.model}} {{car.nrRejestracyjny}}?<h1>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Usun</button>
+        </form>
+        <!--link to get back to all cars-->
+        <a href="{% url 'showAllCars' %}">Cofnij</a>
+
+ {% endblock %}

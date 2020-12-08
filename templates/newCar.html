@@ -1,0 +1,30 @@
+{% extends '__main.html' %}
+
+{% load bootstrap %}
+
+{% block title%}Car Form{% endblock %}
+
+{% block page %}
+
+    <div class="card" style="width: 36rem; margin-left: auto; margin-right: auto;">
+        <div class="card-body">
+            <h5 class="card-title">Car Form</h5>
+            <form method="post" enctype="multipart/form-data">
+                <!--form from .views-->
+                {% csrf_token %}
+                {{ form|bootstrap }}
+                {% if new %}
+                    <!--subbmit button for POST-->
+                    <button type="submit">Dodaj pojazd</button>
+                {% else %}
+                    <!--subbmit button for POST-->
+                    <button type="submit">Zmien dane</button>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+
+    <a href="{% url 'showAllCars' %}">Cofnij</a>
+
+{% endblock %}
+
