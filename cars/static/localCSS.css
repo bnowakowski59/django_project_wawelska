@@ -1,3 +1,8 @@
 body {
     padding: 2rem;
 }
+
+.car-media {
+    width: 150px;
+    float: left;
+}

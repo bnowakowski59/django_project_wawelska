@@ -8,7 +8,13 @@
 
     <div class="card" style="width: 36rem; margin-left: auto; margin-right: auto;">
         <div class="card-body">
-            <h5 class="card-title">Car Form</h5>
+
+            {% if new %}
+                <h5 class="card-title">Nowy pojazd</h5>
+            {% else %}
+                <h5 class="card-title">Edytuj pojazd</h5>
+            {% endif %}
+
             <form method="post" enctype="multipart/form-data">
                 <!--form from .views-->
                 {% csrf_token %}

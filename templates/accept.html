@@ -4,11 +4,17 @@
 
 {% block page %}
 
-    <h1>Czy napewno chcesz usunac {{car.marka}} {{car.model}} {{car.nrRejestracyjny}}?<h1>
-        <form method="post">
-            {% csrf_token %}
-            <button type="submit">Usun</button>
-        </form>
+    <div class="card" style="width: 36rem; margin-left: auto; margin-right: auto;">
+        <div class="card-body">
+            <h5 class="card-title">Czy napewno chcesz usunac {{car.marka}} {{car.model}} {{car.nrRejestracyjny}} ?</h5>
+
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Usun</button>
+            </form>
+
+        </div>
+    </div>
         <!--link to get back to all cars-->
         <a href="{% url 'showAllCars' %}">Cofnij</a>
 

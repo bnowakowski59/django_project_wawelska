@@ -17,44 +17,30 @@
 
     <a href="{% url 'newCar' %}"><i class="fas fa-2x fa-plus-circle"></i></a>
 
-    {% if allCars|length == 0 %}
-        <p>Brak samochodw w BD</p>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Marka</th>
+                <th scope="col">Model</th>
+                <th scope="col">Nr rejestracyjny</th>
+                <th scope="col">Rok produkcji</th>
+            </tr>
+        </thead>
 
-    {% else %}
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            
+        <tbody>
+
         {% for car in allCars %}
-            <div class="col">
-                <div class="card" style="width: 26rem;">
-                    <div class="card-body">
-                        <div class="row">
+            <tr>
+                <td>{{car.model}}</td>
+                <td>{{car.marka}}</td>
+                <td>{{car.nrRejestracyjny}}</td>
+                <td>{{car.rokProdukcji}}</td>
+                <td><a href="{% url 'editCar' car.id %}"><i class="far fa-2x fa-edit"></i></a></td>
+                <td><a href="{% url 'deleteCAr' car.id %}"><i class="far fa-2x fa-trash-alt"></i></a></td>
 
-                            <div class="col-9">
-                                <h5 class="card-title">{{car.marka}} {{car.model}}</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">{{car.nrRejestracyjny}}</h6>
-                            </div>
-
-                            <div class="col">
-                                <!--link to edit car-->
-                                <a href="{% url 'editCar' car.id %}"><i class="far fa-2x fa-edit"></i></a>
-                                <!--link to delete car-->
-                                <a href="{% url 'deleteCAr' car.id %}"><i class="far fa-2x fa-trash-alt"></i></a>
-                            </div>
-
-                        </div>
-
-                        <div class="row">
-                            <p class="card-text">{{car.opis}}</p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
+            </tr>
         {% endfor %}
-        </div>
-    {% endif %}
-
-
+        </tbody>
+    </table>
 
 {% endblock %}
