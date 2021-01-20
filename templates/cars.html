@@ -26,7 +26,10 @@
                 <th scope="col">Model</th>
                 <th scope="col">Nr rejestracyjny</th>
                 <th scope="col">Rok produkcji</th>
+                <th scope="col">Przebieg</th>
                 <th scope="col">Data przegladu technicznego</th>
+                <th scope="col">Obsuga okresowa data</th>
+                <th scope="col">Obsuga okresowa km</th>
             </tr>
         </thead>
 
@@ -34,10 +37,12 @@
 
         {% for car in allCars %}
             <tr>
-                <td>{{car.model}}</td>
                 <td>{{car.marka}}</td>
+                <td>{{car.model}}</td>
                 <td>{{car.nrRejestracyjny}}</td>
                 <td>{{car.rokProdukcji}}</td>
+                <td>{{car.przebiegPojazdu}}</td>
+
                 {% if car.przegladTechniczny < allert2 %}
                     <td><div class="alert alert-danger" role="alert">{{car.przegladTechniczny}}</div></td>
                 {% elif car.przegladTechniczny < allert1 %}
@@ -46,7 +51,9 @@
                     <td>{{car.przegladTechniczny}}</td>
                 {% endif %}
 
-                
+                <td>{{car.obslugaOkresowaData}}</td>
+                <td>{{car.obslugaOkresowaKM}}</td>
+
                 <td><a href="{% url 'editCar' car.id %}"><i class="far fa-2x fa-edit"></i></a></td>
                 <td><a href="{% url 'deleteCAr' car.id %}"><i class="far fa-2x fa-trash-alt"></i></a></td>
 

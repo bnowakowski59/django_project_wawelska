@@ -16,6 +16,7 @@ class Car(models.Model):
     rocznikOponZimowych = models.PositiveSmallIntegerField(default=2000)
     rocznikOponLetnich = models.PositiveSmallIntegerField(default=2000)
     rozmiarOpon = models.CharField(max_length=16, null=True, blank=True)
+    przebiegPojazdu = models.PositiveBigIntegerField(default=0)
 
 
 
