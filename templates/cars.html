@@ -6,8 +6,6 @@
 
     <div class="jumbotron">
         <h1 class="display-4">Witaj {{user.username}}</h1>
-        <p>{{allert1}}</p>
-        <p>{{allert2}}</p>
 
         {% if user.is_authenticated %}
             <a href="{% url 'logout' %}" class="btn btn-success">Logout <i class="fas fa-sign-out-alt"></i></a>
@@ -51,7 +49,14 @@
                     <td>{{car.przegladTechniczny}}</td>
                 {% endif %}
 
-                <td>{{car.obslugaOkresowaData}}</td>
+                {% if car.obslugaOkresowaData < allert2 %}
+                    <td><div class="alert alert-danger" role="alert">{{car.przegladTechniczny}}</div></td>
+                {% elif car.obslugaOkresowaData < allert1 %}
+                    <td><div class="alert alert-warning" role="alert">{{car.przegladTechniczny}}</div></td>
+                {% else %}
+                    <td>{{car.obslugaOkresowaData}}</td>
+                {% endif %}
+
                 <td>{{car.obslugaOkresowaKM}}</td>
 
                 <td><a href="{% url 'editCar' car.id %}"><i class="far fa-2x fa-edit"></i></a></td>
