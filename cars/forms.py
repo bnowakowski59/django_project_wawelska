@@ -4,4 +4,15 @@ from .models import Car
 class CarForm(ModelForm):
     class Meta:
         model = Car
-        fields = ['marka', 'model', 'nrRejestracyjny', 'rokProdukcji', 'opis', 'obraz']
+        fields = ['marka',
+                  'model',
+                  'nrRejestracyjny',
+                  'rokProdukcji',
+                  'przegladTechniczny',
+                  'obslugaOkresowaData',
+                  'obslugaOkresowaKM',
+                  'rocznikOponZimowych',
+                  'rocznikOponLetnich',
+                  'rozmiarOpon',
+                  'opis',
+                  'obraz']

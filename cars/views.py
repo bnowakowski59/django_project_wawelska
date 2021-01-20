@@ -2,15 +2,17 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Car
 from .forms import CarForm
 from django.contrib.auth.decorators import login_required
-
-
+from datetime import date, timedelta
 
 # Create your views here.
 # CRUDE
 # READ all models in DB
 def showAllCars(request):
+    allert1 = date.today() + timedelta(days=30)
+    allert2 = date.today()
+
     allCars = Car.objects.all()
-    return  render(request, 'cars.html', {'allCars':allCars})
+    return render(request, 'cars.html', {'allCars':allCars, 'allert1':allert1, 'allert2':allert2})
 
 # CREATE new Form for DB
 @login_required
