@@ -8,6 +8,7 @@ class CarForm(ModelForm):
                   'model',
                   'nrRejestracyjny',
                   'rokProdukcji',
+                  'przebiegPojazdu',
                   'przegladTechniczny',
                   'obslugaOkresowaData',
                   'obslugaOkresowaKM',
