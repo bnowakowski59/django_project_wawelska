@@ -7,6 +7,7 @@ class CarForm(ModelForm):
         fields = ['marka',
                   'model',
                   'nrRejestracyjny',
+                  'nrWewnetrzny',
                   'rokProdukcji',
                   'przebiegPojazdu',
                   'przegladTechniczny',
