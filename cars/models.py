@@ -1,5 +1,4 @@
 from django.db import models
-import datetime
 
 # Create your models here.
 
@@ -22,4 +21,4 @@ class Car(models.Model):
 
 
     def __str__(self):
-        return f"{self.marka} {self.model} {self.nrRejestracyjny} {self.nrWewnetrzny}"
+        return f"{self.marka} {self.model} {self.nrRejestracyjny}"
